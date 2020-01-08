@@ -1,0 +1,19 @@
+{
+  "name": "space-x",
+  "version": "1.0.0",
+  "description": "React and GraphQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Ivan Cvitkovic",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "nodemon": "^2.0.2"
+  }
+}
