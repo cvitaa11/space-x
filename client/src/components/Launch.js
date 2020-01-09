@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
+import spinner from "../search.gif";
 
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
@@ -29,7 +30,12 @@ export default class Launch extends Component {
       <React.Fragment>
         <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
           {({ loading, error, data }) => {
-            if (loading) return <h4 className="text-center">Loading...</h4>;
+            if (loading)
+              return (
+                <div className="text-center my-4">
+                  <img src={spinner} alt="loading" />
+                </div>
+              );
             if (error)
               return (
                 <h4 className="text-danger text-center">

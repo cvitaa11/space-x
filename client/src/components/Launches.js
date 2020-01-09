@@ -3,6 +3,7 @@ import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import LaunchItem from "./LaunchItem";
 import MissionKey from "./MissionKey";
+import spinner from "../search.gif";
 
 const LAUNCHES_QUERY = gql`
   query LaunchesQuery {
@@ -23,7 +24,7 @@ export class Launches extends Component {
         <MissionKey />
         <Query query={LAUNCHES_QUERY}>
           {({ loading, error, data }) => {
-            if (loading) return <h4>Loading...</h4>;
+            if (loading) return <img src={spinner} alt="loading" />;
             if (error)
               return (
                 <h4 className="text-danger text-center">
